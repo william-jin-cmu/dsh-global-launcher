@@ -1,0 +1,62 @@
+{
+  "name": "dsh-global-launcher",
+  "version": "0.1.0",
+  "description": "A global hotkey that opens a small prompt bar from anywhere on your Mac and starts a DeepSeek Harness session with what you type.",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./client": "./dist/client.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-global-launcher-helper": "bin/dsh-global-launcher-helper"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "cordis.patch.yml"
+  ],
+  "os": [
+    "darwin"
+  ],
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "launcher",
+    "hotkey",
+    "macos"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "pack": "node scripts/build.mjs && pnpm pack"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.5",
+    "@deepseek-ai/dsh-llm": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.5",
+    "@deepseek-ai/schemastery": "3.18.5",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.0"
+  },
+  "packageManager": "pnpm@11.7.0"
+}
