@@ -31,10 +31,10 @@ These choices are remembered in `$DSH_HOME/global-launcher/state.json`.
 Requires DSH `>=0.2.1-rc.5 <0.3.0` and Node.js 22.19 or later.
 
 ```sh
-dsh plugin --profile web add ./dsh-global-launcher-0.1.0.tgz
+dsh plugin --profile web add https://github.com/william-jin-cmu/dsh-global-launcher/releases/download/v0.1.0/dsh-global-launcher-0.1.0.tgz
 ```
 
-In the desktop app, use Plugins > Add plugin with the path of the tarball instead.
+In the desktop app, use Plugins > Add plugin with the same URL.
 
 The hotkeys work while DSH is running. macOS asks for **Screen Recording** (screenshots) and **Accessibility** (window text) for the app DSH runs in. By default macOS binds `⌥⌘Space` to "Show Finder search window": turn that off in System Settings > Keyboard > Keyboard Shortcuts > Spotlight, or change `contextHotkey`.
 
